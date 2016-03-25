@@ -25,7 +25,7 @@ public class MainPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainpage);
+        setContentView(R.layout.mainpage_bar);
         String menuLabels[] = {getResources().getString(R.string.menu_wait_gd), getResources().getString(R.string.gd_search),
                 getResources().getString(R.string.map_nav), getResources().getString(R.string.job_instruction), getResources().getString(R.string.system_set)};
         String doughNutItems[] = {getResources().getString(R.string.wait_done), getResources().getString(R.string.wait_uploaded)};

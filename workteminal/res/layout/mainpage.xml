@@ -23,7 +23,7 @@
                       android:orientation="horizontal"
                       android:layout_height="wrap_content">
             <ImageView android:layout_width="10dp" android:layout_height="10dp"
-                  android:background="@color/wait_done_color"/>
+                       android:background="@color/wait_done_color"/>
             <TextView android:layout_width="wrap_content"
                       android:textSize="10sp"
                       android:textColor="@color/wait_done_color"
@@ -32,7 +32,7 @@
             <ImageView android:layout_width="10dp"
                        android:layout_marginLeft="20dp"
                        android:layout_height="10dp"
-                  android:background="@color/wait_uploaded_color"/>
+                       android:background="@color/wait_uploaded_color"/>
             <TextView android:layout_width="wrap_content"
                       android:textSize="10sp"
                       android:textColor="@color/wait_uploaded_color"
