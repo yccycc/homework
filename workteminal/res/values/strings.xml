@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">workteminal</string>
+    <string name="app_discription">用电信息采集运维现场运维管理</string>
+    <string name="login_worker">操作员</string>
+    <string name="login_pwd">密码</string>
+    <string name="login_btn_wd">登录</string>
+    <string name="wait_gd">代办工单</string>
+    <string name="menu_wait_gd">代办工单</string>
+    <string name="gd_search">工单查询</string>
+    <string name="map_nav">地图导航</string>
+    <string name="job_instruction">作业指导</string>
+    <string name="system_set">系统设置</string>
+    <string name="wait_done">待处理</string>
+    <string name="wait_uploaded">待上传</string>
+</resources>

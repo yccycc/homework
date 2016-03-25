@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+>
+
+    <ImageView
+            android:background="@drawable/menu_item_bg"
+            android:id="@+id/menu_item_iv"
+            android:scaleType="center"
+            android:src="@drawable/menu_wait_gd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/menu_item_tv"
+            android:textSize="@dimen/wait_gd_tv_ts"
+            android:textColor="@color/app_description_color"
+            android:text="@string/wait_gd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</LinearLayout>
+

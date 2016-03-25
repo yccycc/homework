@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="worker_et_w">200dp</dimen>
+    <dimen name="worker_et_p_w">290dp</dimen>
+    <dimen name="worker_et_p_h">45dp</dimen>
+    <dimen name="login_label_w">45dp</dimen>
+    <dimen name="com_logo_mt">40dp</dimen>
+    <dimen name="app_discription_wd_size">30sp</dimen>
+    <dimen name="app_discription_w">260dp</dimen>
+    <dimen name="worker_et_p_mt">20dp</dimen>
+    <dimen name="login_btn_mt">10dp</dimen>
+    <dimen name="wait_circle_mt">60dp</dimen>
+    <dimen name="worker_et_p_padding">5dp</dimen>
+    <dimen name="login_btn_h">40dp</dimen>
+    <dimen name="wait_circle_w">3dp</dimen>
+    <dimen name="wait_gd_tv_ts">12sp</dimen>
+</resources>
