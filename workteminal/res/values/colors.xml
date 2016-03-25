@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_description_color">#006E6A</color>
+    <color name="wait_done_color">#FF4D50C0</color>
+    <color name="wait_uploaded_color">#FFBD814F</color>
 </resources>

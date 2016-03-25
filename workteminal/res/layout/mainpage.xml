@@ -7,11 +7,38 @@
               android:layout_height="fill_parent"
 >
     <LinearLayout
+            android:gravity="center"
             android:orientation="vertical"
-            android:id="@+id/chart_space_ll"
             android:layout_weight="2"
             android:layout_width="match_parent"
             android:layout_height="0dp">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:id="@+id/chart_space_ll"
+                      android:orientation="vertical"
+                      android:layout_height="200dp">
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:gravity="center"
+                      android:orientation="horizontal"
+                      android:layout_height="wrap_content">
+            <ImageView android:layout_width="10dp" android:layout_height="10dp"
+                  android:background="@color/wait_done_color"/>
+            <TextView android:layout_width="wrap_content"
+                      android:textSize="10sp"
+                      android:textColor="@color/wait_done_color"
+                      android:text="@string/wait_done"
+                      android:layout_height="wrap_content"/>
+            <ImageView android:layout_width="10dp"
+                       android:layout_marginLeft="20dp"
+                       android:layout_height="10dp"
+                  android:background="@color/wait_uploaded_color"/>
+            <TextView android:layout_width="wrap_content"
+                      android:textSize="10sp"
+                      android:textColor="@color/wait_uploaded_color"
+                      android:text="@string/wait_uploaded"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
             android:gravity="center"
@@ -19,12 +46,12 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp">
-            <GridView
-                    android:verticalSpacing="5dp"
-                    android:numColumns="3"
-                    android:id="@+id/mp_menu_gv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+        <GridView
+                android:verticalSpacing="5dp"
+                android:numColumns="3"
+                android:id="@+id/mp_menu_gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>
 
