@@ -26,7 +26,7 @@ public class PieFrag extends Fragment {
         mParentView = inflater.inflate(R.layout.mainpage_pie,null);
         mChartLl = (LinearLayout) mParentView.findViewById(R.id.chart_space_ll);
         int[] colors = new int[]{TO_BE_DEALED_COLOR, TO_BE_UPLOADED_COLOR};
-        mGdNums = new int[]{90, 10};
+        mGdNums = new int[]{185, 20};
         DefaultRenderer renderer = buildCategoryRenderer(colors);
         SimpleSeriesRenderer r = renderer.getSeriesRendererAt(1);
         r.setHighlighted(true);

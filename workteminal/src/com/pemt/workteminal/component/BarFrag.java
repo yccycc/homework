@@ -24,7 +24,7 @@ public class BarFrag extends Fragment {
         String[] titles = new String[] { "待处理", "待上传" };
         List<double[]> values = new ArrayList<double[]>();
         values.add(new double[] { 185 });
-        values.add(new double[] { 10 });
+        values.add(new double[] { 20 });
         int[] colors = new int[] { Color.BLUE, Color.CYAN };
         XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
         setChartSettings(renderer, "工单结果", "类型", "数量", 0,
