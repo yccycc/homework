@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.pemt.workteminal.component.BarFrag;
+import com.pemt.workteminal.component.DepthPageTransformer;
 import com.pemt.workteminal.component.PieFrag;
 
 import java.util.ArrayList;
@@ -72,6 +73,7 @@ public class MainPage extends FragmentActivity {
         mFrgList.add(new PieFrag());
         mFrgList.add(new BarFrag());
         mMpVp.setAdapter(new ChartPagerAdapter(MainPage.this.getSupportFragmentManager(), mFrgList));
+        mMpVp.setPageTransformer(true, new DepthPageTransformer());
 
     }
 
