@@ -8,8 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
 import org.achartengine.model.CategorySeries;
+import org.achartengine.model.SeriesSelection;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
@@ -46,6 +49,24 @@ public class BarFrag extends Fragment {
         renderer.setApplyBackgroundColor(true);//必须设置为true，颜色值才生效
         renderer.setBackgroundColor(Color.TRANSPARENT);//设置表格背景色
         renderer.setMarginsColor(Color.TRANSPARENT);//设置周边背景色
+        renderer.setClickEnabled(true);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SeriesSelection seriesSelection = ((GraphicalView)view).getCurrentSeriesAndPoint();
+                if (seriesSelection == null) {
+                    Toast
+                            .makeText(BarFrag.this.getActivity(), "No chart element was clicked", Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Toast.makeText(
+                            BarFrag.this.getActivity(),
+                            "Chart element data point index " + seriesSelection.getPointIndex()
+                                    + " was clicked" + " point value=" + seriesSelection.getValue(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         return view;
     }
     protected XYMultipleSeriesRenderer buildBarRenderer(int[] colors) {
