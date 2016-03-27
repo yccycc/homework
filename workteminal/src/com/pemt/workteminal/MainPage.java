@@ -51,11 +51,19 @@ public class MainPage extends FragmentActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                convertView = getLayoutInflater().inflate(R.layout.mp_menu_item, null);
-                ImageView imageView = (ImageView) convertView.findViewById(R.id.menu_item_iv);
-                TextView textView = (TextView) convertView.findViewById(R.id.menu_item_tv);
-                imageView.setImageResource(mMenuItemImgs[position]);
-                textView.setText(mMenuLabels[position]);
+                //
+                ViewHolder holder;
+                if (convertView == null) {
+                    convertView = getLayoutInflater().inflate(R.layout.mp_menu_item, null);
+                    holder = new ViewHolder();
+                    holder.imageView = (ImageView) convertView.findViewById(R.id.menu_item_iv);
+                    holder.textView = (TextView) convertView.findViewById(R.id.menu_item_tv);
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+                holder.imageView.setImageResource(mMenuItemImgs[position]);
+                holder.textView.setText(mMenuLabels[position]);
                 return convertView;
             }
         });
@@ -63,12 +71,18 @@ public class MainPage extends FragmentActivity {
         mFrgList = new ArrayList<Fragment>();
         mFrgList.add(new PieFrag());
         mFrgList.add(new BarFrag());
-        mMpVp.setAdapter(new ChartPagerAdapter(MainPage.this.getSupportFragmentManager(),mFrgList));
+        mMpVp.setAdapter(new ChartPagerAdapter(MainPage.this.getSupportFragmentManager(), mFrgList));
 
     }
-    class ChartPagerAdapter extends FragmentPagerAdapter{
 
-        public ChartPagerAdapter(FragmentManager fm,List<Fragment> fragList) {
+    static class ViewHolder {
+        TextView textView;
+        ImageView imageView;
+    }
+
+    class ChartPagerAdapter extends FragmentPagerAdapter {
+
+        public ChartPagerAdapter(FragmentManager fm, List<Fragment> fragList) {
             super(fm);
         }
 
