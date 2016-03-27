@@ -50,9 +50,10 @@
                 android:layout_width="@dimen/worker_et_w"
                 android:layout_height="wrap_content"/>
         <ImageView
+                android:scaleType="fitXY"
                 android:src="@drawable/clear_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="15dp"
+                android:layout_height="15dp"/>
     </LinearLayout>
     <Button
             android:id="@+id/login_btn"
