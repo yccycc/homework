@@ -8,9 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import com.pemt.workteminal.R;
 import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
 import org.achartengine.model.CategorySeries;
+import org.achartengine.model.SeriesSelection;
 import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 
@@ -32,6 +35,24 @@ public class PieFrag extends Fragment {
         r.setHighlighted(true);
         View chartView = ChartFactory.getPieChartView(PieFrag.this.getActivity(), buildCategoryDataset("工单",mGdNums), renderer);
         mChartLl.addView(chartView);
+        renderer.setClickEnabled(true);
+        chartView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SeriesSelection seriesSelection = ((GraphicalView)chartView).getCurrentSeriesAndPoint();
+                if (seriesSelection == null) {
+                    Toast
+                            .makeText(PieFrag.this.getActivity(), "No chart element was clicked", Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Toast.makeText(
+                            PieFrag.this.getActivity(),
+                            "Chart element data point index " + seriesSelection.getPointIndex()
+                                    + " was clicked" + " point value=" + seriesSelection.getValue(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         return mParentView;
     }
     protected DefaultRenderer buildCategoryRenderer(int[] colors) {
