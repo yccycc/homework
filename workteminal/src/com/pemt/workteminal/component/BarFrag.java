@@ -24,7 +24,7 @@ public class BarFrag extends Fragment {
         String[] titles = new String[] { "待处理", "待上传" };
         List<double[]> values = new ArrayList<double[]>();
         values.add(new double[] { 185 });
-        values.add(new double[] { 20 });
+        values.add(new double[] { 20});
         int[] colors = new int[] { Color.BLUE, Color.CYAN };
         XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
         setChartSettings(renderer, "工单结果", "类型", "数量", 0,
@@ -36,12 +36,9 @@ public class BarFrag extends Fragment {
         renderer.setYLabels(10);
         renderer.setXLabelsAlign(Paint.Align.LEFT);
         renderer.setYLabelsAlign(Paint.Align.LEFT);
-        renderer.removeXTextLabel(2);
         renderer.setXLabelsColor(Color.TRANSPARENT);
         renderer.setYLabelsColor(0,Color.BLACK);
-        renderer.setPanEnabled(true, false);
-        renderer.setZoomRate(5.1f);
-        renderer.setBarSpacing(1.0f);
+        renderer.setBarSpacing(50.0);
         renderer.setBarWidth(80);
         View view = ChartFactory.getBarChartView(BarFrag.this.getActivity(),
                 buildBarDataset(titles, values), renderer, org.achartengine.chart.BarChart.Type.DEFAULT);
