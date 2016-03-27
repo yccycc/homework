@@ -32,17 +32,17 @@ public class BarFrag extends Fragment {
         ((XYSeriesRenderer) renderer.getSeriesRendererAt(0)).setDisplayChartValues(true);
         ((XYSeriesRenderer) renderer.getSeriesRendererAt(1)).setDisplayChartValues(true);
         renderer.setLabelsColor(Color.BLACK);
-        renderer.setXLabels(1);
+        renderer.setXLabels(2);
         renderer.setYLabels(10);
         renderer.setXLabelsAlign(Paint.Align.LEFT);
         renderer.setYLabelsAlign(Paint.Align.LEFT);
         renderer.removeXTextLabel(2);
-        renderer.setXLabelsColor(Color.BLACK);
+        renderer.setXLabelsColor(Color.TRANSPARENT);
         renderer.setYLabelsColor(0,Color.BLACK);
         renderer.setPanEnabled(true, false);
         renderer.setZoomRate(5.1f);
-        renderer.setBarSpacing(10.0f);
-        renderer.setBarWidth(50);
+        renderer.setBarSpacing(1.0f);
+        renderer.setBarWidth(80);
         View view = ChartFactory.getBarChartView(BarFrag.this.getActivity(),
                 buildBarDataset(titles, values), renderer, org.achartengine.chart.BarChart.Type.DEFAULT);
         renderer.setClickEnabled(true);
