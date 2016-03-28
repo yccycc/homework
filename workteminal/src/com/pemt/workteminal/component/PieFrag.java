@@ -4,9 +4,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationSet;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.pemt.workteminal.R;
@@ -36,6 +39,19 @@ public class PieFrag extends Fragment {
         View chartView = ChartFactory.getPieChartView(PieFrag.this.getActivity(), buildCategoryDataset("工单",mGdNums), renderer);
         mChartLl.addView(chartView);
         renderer.setClickEnabled(true);
+        //创建一个AnimationSet对象，参数为Boolean型，
+        //true表示使用Animation的interpolator，false则是使用自己的
+        AnimationSet animationSet = new AnimationSet(true);
+        //创建一个AlphaAnimation对象，参数从完全的透明度，到完全的不透明
+        AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0.8f);
+        //设置动画执行的时间
+        alphaAnimation.setDuration(2000);
+        alphaAnimation.setRepeatCount(Integer.MAX_VALUE);
+        //将alphaAnimation对象添加到AnimationSet当中
+        animationSet.addAnimation(alphaAnimation);
+        long t1 = System.currentTimeMillis();
+        chartView.startAnimation(animationSet);
+        Log.i("goddess",System.currentTimeMillis()-t1+"");
         chartView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

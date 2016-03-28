@@ -50,6 +50,7 @@ public class BarFrag extends Fragment {
         renderer.setBackgroundColor(Color.TRANSPARENT);//设置表格背景色
         renderer.setMarginsColor(Color.TRANSPARENT);//设置周边背景色
         renderer.setClickEnabled(true);
+        renderer.setPanEnabled(false,false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
