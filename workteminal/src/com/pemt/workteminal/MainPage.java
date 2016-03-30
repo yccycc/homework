@@ -1,5 +1,6 @@
 package com.pemt.workteminal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,13 +9,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 import com.pemt.workteminal.component.BarFrag;
 import com.pemt.workteminal.component.DepthPageTransformer;
 import com.pemt.workteminal.component.PieFrag;
+import com.pemt.workteminal.pages.InstructionActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +24,7 @@ public class MainPage extends FragmentActivity {
     private String mMenuLabels[];
     private ViewPager mMpVp;
     private List mFrgList;
+    Class [] mMenuItenActivities = {InstructionActivity.class,InstructionActivity.class,InstructionActivity.class,InstructionActivity.class,InstructionActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,12 @@ public class MainPage extends FragmentActivity {
         mFrgList.add(new BarFrag());
         mMpVp.setAdapter(new ChartPagerAdapter(MainPage.this.getSupportFragmentManager(), mFrgList));
         mMpVp.setPageTransformer(true, new DepthPageTransformer());
-
+        mMpMenuGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(MainPage.this,mMenuItenActivities[position]));
+            }
+        });
     }
 
     static class ViewHolder {

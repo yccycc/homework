@@ -17,5 +17,7 @@
         <activity android:name=".MainPage"
                   android:label="@string/app_name">
         </activity>
+        <activity android:name=".pages.InstructionActivity"/>
+        <activity android:name=".pages.InstructionActivity"/>
     </application>
 </manifest>

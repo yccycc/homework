@@ -32,6 +32,9 @@
                 android:layout_width="@dimen/login_label_w"
                 android:layout_height="wrap_content"/>
         <EditText
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:singleLine="true"
                 android:layout_width="@dimen/worker_et_w"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -47,6 +50,9 @@
                 android:layout_width="@dimen/login_label_w"
                 android:layout_height="wrap_content"/>
         <EditText
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:singleLine="true"
                 android:layout_width="@dimen/worker_et_w"
                 android:layout_height="wrap_content"/>
         <ImageView
