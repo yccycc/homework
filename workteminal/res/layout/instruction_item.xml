@@ -10,6 +10,10 @@
             android:src="@drawable/instruction_item_icon"/>
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="专变终端常见故障：无通讯"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="2016-02-03 13:01:01"/>
         </LinearLayout>
     </LinearLayout>
 
