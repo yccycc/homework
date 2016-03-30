@@ -20,6 +20,10 @@
                    android:layout_weight="1"/>
     </LinearLayout>
     <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:src="@drawable/gap_line"/>
+               android:src="@drawable/gap_line"/>
+    <ListView android:layout_width="match_parent" android:layout_height="match_parent"
+              android:dividerHeight="12dp"
+              android:divider="#00000000"
+              android:id="@+id/instruction_lv"/>
 
 </LinearLayout>
